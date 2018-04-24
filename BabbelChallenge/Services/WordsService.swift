@@ -8,22 +8,30 @@
 
 import Foundation
 
-struct WordLanguages {
-  let enWord: String
-  let esWord: String
-  var hasBeenUsed = false
-}
-
-typealias WordsCallback = (_ words: [WordLanguages]?, _ error: Error?) -> Void
+typealias WordsCallback = (_ words: [WordsResponse]) -> Void
 
 protocol WordsProvider {
-  func getNewWords(completion: @escaping (WordsCallback) -> ())
+  func getNewWords(completion: @escaping (WordsCallback))
 }
 
-
 class WordsService : WordsProvider {
-  func getNewWords(completion: @escaping (([WordLanguages]?, Error?) -> Void) -> ()) {
   
+  private let responseParser: ResponseParser
+  
+  init(responseParser: ResponseParser) {
+    self.responseParser = responseParser
+  }
+  
+  func getNewWords(completion: @escaping (([WordsResponse]) -> Void)) {
+    let wordsData = requestWordsData()
+    let result = responseParser.parse(data: wordsData)
+    switch result {
+    case .data(let data):
+      completion(data)
+    case .error(_):
+      completion([])
+      break
+    }
   }
   
   private func requestWordsData() -> Data? {
