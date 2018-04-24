@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias WordsCallback = (_ words: [WordsResponse]) -> Void
+typealias WordsCallback = (_ words: [WordTranslation]) -> Void
 
 protocol WordsProvider {
   func getNewWords(completion: @escaping (WordsCallback))
@@ -22,7 +22,7 @@ class WordsService : WordsProvider {
     self.responseParser = responseParser
   }
   
-  func getNewWords(completion: @escaping (([WordsResponse]) -> Void)) {
+  func getNewWords(completion: @escaping (([WordTranslation]) -> Void)) {
     let wordsData = requestWordsData()
     let result = responseParser.parse(data: wordsData)
     switch result {

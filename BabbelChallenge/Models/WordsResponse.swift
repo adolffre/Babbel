@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WordsResponse: Decodable {
+struct WordTranslation: Decodable {
   
   let enWord: String
   let esWord: String

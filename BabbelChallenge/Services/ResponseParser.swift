@@ -14,7 +14,7 @@ enum ParseError: String {
 }
 
 enum ParseResult {
-  case data([WordsResponse])
+  case data([WordTranslation])
   case error(ParseError)
 }
 

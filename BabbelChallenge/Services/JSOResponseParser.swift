@@ -17,7 +17,7 @@ class JSONResponseParser: ResponseParser {
     
     do {
       let decoder = JSONDecoder()
-      let result = try decoder.decode([WordsResponse].self, from: responseData)
+      let result = try decoder.decode([WordTranslation].self, from: responseData)
       return .data(result)
     } catch {
       if let json = try? JSONSerialization.jsonObject(with: responseData, options: []) {
