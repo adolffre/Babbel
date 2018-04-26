@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E386C8BD209136C4004C2FFD /* GamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E386C8BC209136C4004C2FFD /* GamePresenter.swift */; };
 		E3F12530208FC67E005B8779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F1252F208FC67E005B8779 /* AppDelegate.swift */; };
 		E3F12532208FC67E005B8779 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F12531208FC67E005B8779 /* ViewController.swift */; };
 		E3F12535208FC67E005B8779 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F12533208FC67E005B8779 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E386C8BC209136C4004C2FFD /* GamePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePresenter.swift; sourceTree = "<group>"; };
 		E3F1252C208FC67E005B8779 /* BabbelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabbelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F1252F208FC67E005B8779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E3F12531208FC67E005B8779 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 		E3F1252E208FC67E005B8779 /* BabbelChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				E3F1255C208FE60D005B8779 /* Presenters */,
 				E3F12557208FD8A6005B8779 /* Models */,
 				E3F12552208FD486005B8779 /* Json */,
 				E3F1254F208FCC43005B8779 /* Services */,
@@ -133,6 +136,14 @@
 				E3F12558208FD8B8005B8779 /* WordsResponse.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E3F1255C208FE60D005B8779 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				E386C8BC209136C4004C2FFD /* GamePresenter.swift */,
+			);
+			path = Presenters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +252,7 @@
 				E3F12532208FC67E005B8779 /* ViewController.swift in Sources */,
 				E3F1255B208FD91D005B8779 /* JSOResponseParser.swift in Sources */,
 				E3F12530208FC67E005B8779 /* AppDelegate.swift in Sources */,
+				E386C8BD209136C4004C2FFD /* GamePresenter.swift in Sources */,
 				E3F12559208FD8B8005B8779 /* WordsResponse.swift in Sources */,
 				E3F12556208FD57C005B8779 /* ResponseParser.swift in Sources */,
 			);

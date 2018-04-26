@@ -12,7 +12,7 @@ struct WordTranslation: Decodable {
   
   let enWord: String
   let esWord: String
-  let hasBeenUsed = false
+  var hasBeenUsed = false
   
   enum CodingKeys: String, CodingKey {
     case enWord = "text_eng"
