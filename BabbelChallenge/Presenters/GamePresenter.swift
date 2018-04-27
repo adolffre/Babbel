@@ -14,9 +14,9 @@ protocol GameView: NSObjectProtocol{
   func resetLifeCounter()
   func removeOneLife()
   func gameOver()
-  func makeWordFallFaster()
   func wrongWordSelected()
   func corretWordSelected()
+  func createCloud()
   func showWordToPlay(word: String)
   func showTranslationWord(word: String)
 }
@@ -38,7 +38,7 @@ class GamePresenter {
   
   func notifyViewDidLoad() {
     initializeGame()
-    
+    gameView?.createCloud()
   }
   func notifyViewWillAppear() {
     startLevel()
@@ -51,14 +51,17 @@ class GamePresenter {
   }
   
   func notifyWordPressed(enWord: String) {
-    checkTranslation(enWord: enWord)
+    if enWord == "Restart" {
+      restartGame()
+    } else {
+      checkTranslation(enWord: enWord)
+    }
+    
   }
   func notifyWordIsOutOfTheScreen(enWord: String) {
     showDifferentWord(lastWord: enWord)
   }
-  func notifyOutOfWordPressed(enWord: String) {
-    gameView?.makeWordFallFaster()
-  }
+  
 }
 
 // MARK: -  private methods
